@@ -19,14 +19,14 @@ public class LeagueTableService {
     public void printLeageTable(List<LeagueTableEntry> standings) {
         StringBuilder builder = new StringBuilder();
         builder.append(String.format("%10s %30s %10s %10s %10s %10s %10s %10s %10s %10s",
-                "Position", "Team", "Played", "Won", "Drawn", "Lost", "GF", "GA", "GD", "Points"));
+                "Position", "Team", "Played",  "Won", "Drawn", "Lost", "GF", "GA", "GD", "Points"));
         builder.append("\n");
         for (int i = 0; i< standings.size(); i++) {
             LeagueTableEntry standing = standings.get(i);
-            builder.append(String.format("%10s %30s %10s %10s %10s %10s %10s %10s %10s",
-                    i+1, standing.getTeamName(), standing.getPlayed(), standing.getWon(), standing.getDrawn(),
-                    standing.getLost(), standing.getGoalsFor(), standing.getGoalsAgainst(), standing.getGoalDifference(),
-                    standing.getPoints()));
+            builder.append(String.format("%10s %30s %10s %10s %10s %10s %10s %10s %10s %10s",
+                    i+1, standing.getTeamName(), standing.getPlayed(),
+                    standing.getWon(), standing.getDrawn(), standing.getLost(), standing.getGoalsFor(),
+                    standing.getGoalsAgainst(), standing.getGoalDifference(), standing.getPoints()));
             builder.append("\n");
         }
 

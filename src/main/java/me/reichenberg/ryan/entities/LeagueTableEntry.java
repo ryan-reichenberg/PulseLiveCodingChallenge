@@ -2,7 +2,6 @@ package me.reichenberg.ryan.entities;
 
 import java.util.Objects;
 
-// TODO: Implement builder pattern
 // Immutable class = DTO
 public class LeagueTableEntry {
     /**
@@ -129,5 +128,104 @@ public class LeagueTableEntry {
                 ", goalDifference=" + goalDifference +
                 ", points=" + points +
                 '}';
+    }
+    
+    public static class LeagueTableEntryBuilder {
+        /**
+         * name of this team
+         */
+        private String teamName;
+        /**
+         * total games played
+         */
+        private int played;
+        /**
+         * total games won
+         */
+        private int won;
+        /**
+         * total games drawn
+         */
+        private int drawn;
+        /**
+         * total games lost
+         */
+        private int lost;
+        /**
+         * total goals scored by this team
+         */
+        private int goalsFor;
+        /**
+         * total goals against this team
+         */
+        private int goalsAgainst;
+        /**
+         * total points (3 for wins, and 1 for draws, 0 for loss)
+         */
+        private int points;
+
+        public static LeagueTableEntryBuilder newBuilder() {
+            return new LeagueTableEntryBuilder();
+        }
+
+        public LeagueTableEntryBuilder withTeamName(String teamName) {
+            this.teamName = teamName;
+            return this;
+        }
+
+        public LeagueTableEntryBuilder withPlayed(int played) {
+            this.played = played;
+            return this;
+        }
+
+        public LeagueTableEntryBuilder withWon(int won) {
+            this.won = won;
+            return this;
+        }
+
+        public LeagueTableEntryBuilder withDrawn(int drawn) {
+            this.drawn = drawn;
+            return this;
+        }
+
+        public LeagueTableEntryBuilder withLost(int lost) {
+            this.lost = lost;
+            return this;
+        }
+
+        public LeagueTableEntryBuilder incrementWin() {
+            this.won += 1;
+            return this;
+        }
+
+        public LeagueTableEntryBuilder incrementDraw() {
+            this.drawn += 1;
+            return this;
+        }
+
+        public LeagueTableEntryBuilder incrementLoss() {
+            this.lost += 1;
+            return this;
+        }
+
+        public LeagueTableEntryBuilder withGoalsFor(int goalsFor) {
+            this.goalsFor = goalsFor;
+            return this;
+        }
+
+        public LeagueTableEntryBuilder withGoalsAgainst(int goalsAgainst) {
+            this.goalsAgainst = goalsAgainst;
+            return this;
+        }
+
+        public LeagueTableEntryBuilder withPoints(int points) {
+            this.points = points;
+            return this;
+        }
+
+        public LeagueTableEntry build() {
+            return new LeagueTableEntry(teamName, played, won, drawn, lost, goalsFor, goalsAgainst,
+                    goalsFor - goalsAgainst, points);
+        }
     }
 }

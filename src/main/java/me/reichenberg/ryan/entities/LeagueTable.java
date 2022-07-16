@@ -44,40 +44,64 @@ public class LeagueTable {
 
     private Pair<LeagueTableEntry, LeagueTableEntry> updateLeagueTableEntries(Match match, LeagueTableEntry home,
                                                                               LeagueTableEntry away) {
-        // These objects are immutable so we need to create new ones every time
-        home  = createNewTableEntry(home, match.getHomeScore(), match.getAwayScore(), determinePoints(match, home.getTeamName()));
-        away = createNewTableEntry(away, match.getAwayScore(), match.getHomeScore(), determinePoints(match, away.getTeamName()));
+        Pair<MatchOutcome, MatchOutcome> outcomes = determineMatchOutcomes(match, home.getTeamName());
+
+        home = createNewTableEntry(home, match.getHomeScore(), match.getAwayScore(), outcomes.getLeft());
+        away = createNewTableEntry(away, match.getAwayScore(), match.getHomeScore(), outcomes.getRight());
         table.put(home.getTeamName(), home);
         table.put(away.getTeamName(), away);
         return Pair.of(home, away);
     }
 
-    private LeagueTableEntry createNewTableEntry(LeagueTableEntry team, int goalsFor, int goalsAgainst, int points) {
-        return  new LeagueTableEntry(team.getTeamName(),
-                team.getPlayed() + 1,
-                team.getWon() + points == WIN_POINTS ? 1: 0,
-                team.getDrawn() + points == DRAW_POINTS ? 1: 0,
-                team.getLost() + points ==  LOSE_POINTS ? 1: 0,
-                team.getGoalsFor() + goalsFor,
-                team.getGoalsAgainst() + goalsAgainst,
-                team.getGoalsFor() - team.getGoalsAgainst(),
-                team.getPoints() + points);
+    private LeagueTableEntry createNewTableEntry(LeagueTableEntry team, int goalsFor, int goalsAgainst, MatchOutcome outcome) {
+        LeagueTableEntry.LeagueTableEntryBuilder builder  = LeagueTableEntry.LeagueTableEntryBuilder.newBuilder();
+        builder.withTeamName(team.getTeamName());
+        builder.withPlayed(team.getPlayed() + 1);
+        updateWinDrawLoss(builder, team, outcome);
+        builder.withPoints(team.getPoints() + determinePoints(outcome));
+        builder.withGoalsFor(team.getGoalsFor() + goalsFor);
+        builder.withGoalsAgainst(team.getGoalsAgainst() +goalsAgainst);
+        return builder.build();
     }
 
-
-    private int determinePoints(Match match, String team) {
-        if (match.getHomeScore() == match.getAwayScore()) {
-            return DRAW_POINTS;
-        } else if (isTeamWinner(match, team)) {
-            return WIN_POINTS;
+    private void updateWinDrawLoss(LeagueTableEntry.LeagueTableEntryBuilder builder, LeagueTableEntry team, MatchOutcome outcome) {
+        builder.withWon(team.getWon());
+        builder.withLost(team.getLost());
+        builder.withDrawn(team.getDrawn());
+        if (outcome == MatchOutcome.DRAW) {
+            builder.incrementDraw();
+        } else if (outcome == MatchOutcome.WIN) {
+            builder.incrementWin();
         } else {
-            return LOSE_POINTS;
+            builder.incrementLoss();
         }
     }
 
+
+    private Pair<MatchOutcome, MatchOutcome> determineMatchOutcomes(Match match, String home) {
+        if (match.getHomeScore() == match.getAwayScore()) {
+            return Pair.of(MatchOutcome.DRAW, MatchOutcome.DRAW);
+        } else if (isTeamWinner(match, home)) {
+            return Pair.of(MatchOutcome.WIN, MatchOutcome.LOSE);
+        } else {
+            return Pair.of(MatchOutcome.LOSE, MatchOutcome.WIN);
+        }
+
+    }
+    private int determinePoints(MatchOutcome outcome) {
+       switch(outcome) {
+           case WIN:
+               return WIN_POINTS;
+           case DRAW:
+               return DRAW_POINTS;
+           default:
+               return LOSE_POINTS;
+       }
+    }
+
     private boolean isTeamWinner(Match match, String team) {
-        return match.getHomeScore() > match.getAwayScore() && match.getHomeTeam().equals(team)
-                || match.getAwayScore() > match.getHomeScore() && match.getAwayTeam().equals(team);
+        return (match.getHomeScore() > match.getAwayScore() && match.getHomeTeam().equals(team))
+                || (match.getAwayScore() > match.getHomeScore() && match.getAwayTeam().equals(team));
     }
 
 
