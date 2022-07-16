@@ -3,10 +3,13 @@ package me.reichenberg.ryan.entities;
 import me.reichenberg.ryan.comparators.LeagueTableEntryComparator;
 import org.apache.commons.lang3.tuple.Pair;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
-// Mutable entity
+// Mutable entity - maintains state
 // Local cache should be fine for this object
 // Shouldn't be too expensive to create
 public class LeagueTable {
@@ -28,56 +31,59 @@ public class LeagueTable {
 
 
     private List<LeagueTableEntry> convert(List<Match> matches) {
-        // League entries for both teams involved in the match
         matches.forEach(match -> {
             Pair<LeagueTableEntry, LeagueTableEntry> leagueEntries = getLeagueEntriesForMatch(match);
-            // left = home, right = away
             updateLeagueTableEntries(match, leagueEntries.getLeft(), leagueEntries.getRight());
         });
+
         return table
                 .values()
                 .stream()
                 .sorted(new LeagueTableEntryComparator())
                 .collect(Collectors.toList());
-
     }
 
-    private Pair<LeagueTableEntry, LeagueTableEntry> updateLeagueTableEntries(Match match, LeagueTableEntry home,
-                                                                              LeagueTableEntry away) {
+    private void updateLeagueTableEntries(Match match, LeagueTableEntry home, LeagueTableEntry away) {
         Pair<MatchOutcome, MatchOutcome> outcomes = determineMatchOutcomes(match, home.getTeamName());
-
-        home = createNewTableEntry(home, match.getHomeScore(), match.getAwayScore(), outcomes.getLeft());
-        away = createNewTableEntry(away, match.getAwayScore(), match.getHomeScore(), outcomes.getRight());
-        table.put(home.getTeamName(), home);
-        table.put(away.getTeamName(), away);
-        return Pair.of(home, away);
+        table.put(home.getTeamName(), createNewTableEntry(home, match.getHomeScore(), match.getAwayScore(), outcomes.getLeft()));
+        table.put(away.getTeamName(), createNewTableEntry(away, match.getAwayScore(), match.getHomeScore(), outcomes.getRight()));
     }
 
     private LeagueTableEntry createNewTableEntry(LeagueTableEntry team, int goalsFor, int goalsAgainst, MatchOutcome outcome) {
-        LeagueTableEntry.LeagueTableEntryBuilder builder  = LeagueTableEntry.LeagueTableEntryBuilder.newBuilder();
-        builder.withTeamName(team.getTeamName());
-        builder.withPlayed(team.getPlayed() + 1);
-        updateWinDrawLoss(builder, team, outcome);
-        builder.withPoints(team.getPoints() + determinePoints(outcome));
-        builder.withGoalsFor(team.getGoalsFor() + goalsFor);
-        builder.withGoalsAgainst(team.getGoalsAgainst() +goalsAgainst);
+        LeagueTableEntry.LeagueTableEntryBuilder builder = LeagueTableEntry.LeagueTableEntryBuilder.newBuilder();
+
+        builder.withTeamName(team.getTeamName())
+        .withPlayed(team.getPlayed() + 1)
+        .withWon(team.getWon())
+        .withLost(team.getLost())
+        .withDrawn(team.getDrawn())
+        .withPoints(team.getPoints())
+        .withGoalsFor(team.getGoalsFor() + goalsFor)
+        .withGoalsAgainst(team.getGoalsAgainst() + goalsAgainst);
+        calculateWinDrawLoss(builder, outcome);
         return builder.build();
     }
 
-    private void updateWinDrawLoss(LeagueTableEntry.LeagueTableEntryBuilder builder, LeagueTableEntry team, MatchOutcome outcome) {
-        builder.withWon(team.getWon());
-        builder.withLost(team.getLost());
-        builder.withDrawn(team.getDrawn());
-        if (outcome == MatchOutcome.DRAW) {
-            builder.incrementDraw();
-        } else if (outcome == MatchOutcome.WIN) {
-            builder.incrementWin();
-        } else {
-            builder.incrementLoss();
+    private void calculateWinDrawLoss(LeagueTableEntry.LeagueTableEntryBuilder builder, MatchOutcome outcome) {
+        switch(outcome) {
+            case WIN:
+                builder.incrementWin();
+                break;
+            case DRAW:
+                builder.incrementDraw();
+                break;
+            default:
+                builder.incrementLoss();
         }
     }
 
 
+    /**
+     * Determines outcomes of the match E.g. which team won and which team lost
+     * @param match
+     * @param home
+     * @return Pair of outcomes (left = outcome for home team, right = outcome for away team)
+     */
     private Pair<MatchOutcome, MatchOutcome> determineMatchOutcomes(Match match, String home) {
         if (match.getHomeScore() == match.getAwayScore()) {
             return Pair.of(MatchOutcome.DRAW, MatchOutcome.DRAW);
@@ -88,28 +94,21 @@ public class LeagueTable {
         }
 
     }
-    private int determinePoints(MatchOutcome outcome) {
-       switch(outcome) {
-           case WIN:
-               return WIN_POINTS;
-           case DRAW:
-               return DRAW_POINTS;
-           default:
-               return LOSE_POINTS;
-       }
-    }
-
-    private boolean isTeamWinner(Match match, String team) {
-        return (match.getHomeScore() > match.getAwayScore() && match.getHomeTeam().equals(team))
-                || (match.getAwayScore() > match.getHomeScore() && match.getAwayTeam().equals(team));
-    }
-
 
     /**
-     * Left  = home team
-     * Right = away team
+     * Check if the passed in team is the winner
      * @param match
-     * @return
+     * @param team
+     * @return true if the team won
+     */
+    private boolean isTeamWinner(Match match, String team) {
+        return match.getHomeScore() > match.getAwayScore() && match.getHomeTeam().equals(team);
+    }
+
+    /**
+     * Look up Map for Team entries otherwise create them if thet don't exist
+     * @param match
+     * @return Pair of team entries (left = home, right = away)
      */
     private Pair<LeagueTableEntry, LeagueTableEntry> getLeagueEntriesForMatch(Match match) {
         LeagueTableEntry home = new LeagueTableEntry(match.getHomeTeam());

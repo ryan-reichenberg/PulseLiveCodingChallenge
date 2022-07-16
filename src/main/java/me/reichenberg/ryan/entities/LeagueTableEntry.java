@@ -2,6 +2,10 @@ package me.reichenberg.ryan.entities;
 
 import java.util.Objects;
 
+import static me.reichenberg.ryan.entities.LeagueTable.DRAW_POINTS;
+import static me.reichenberg.ryan.entities.LeagueTable.LOSE_POINTS;
+import static me.reichenberg.ryan.entities.LeagueTable.WIN_POINTS;
+
 // Immutable class = DTO
 public class LeagueTableEntry {
     /**
@@ -195,16 +199,19 @@ public class LeagueTableEntry {
 
         public LeagueTableEntryBuilder incrementWin() {
             this.won += 1;
+            this.points += WIN_POINTS;
             return this;
         }
 
         public LeagueTableEntryBuilder incrementDraw() {
             this.drawn += 1;
+            this.points += DRAW_POINTS;
             return this;
         }
 
         public LeagueTableEntryBuilder incrementLoss() {
             this.lost += 1;
+            this.points += LOSE_POINTS;
             return this;
         }
 
