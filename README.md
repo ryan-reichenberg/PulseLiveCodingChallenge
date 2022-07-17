@@ -49,11 +49,11 @@ league table in csv format.
 - No validations around the data
 
 # Assumptions
-- Average absolute score difference in the LeagueTableEntry as the int type implies a whole number but the average would be a double. 
-As a result I treated this as the normal goal difference.
+- Goal difference in the LeagueTableEntry is annotated with "Average absolute score difference". The average goal difference would end up being some kind of decimal number, which is incongruent witht the data type of int. As a result, I treated this field as the absolute goal difference (goalsFor - goalsAgainst)
 - The data coming in (e.g. Match data) will always be correct, so no validations are provided. 
 In a real world example, it is  likely this data is coming from a messaging source (e.g. Kafka) and an entirely different service.
 As such, it makes sense validation of the data (e.g. messages) are a responsibility of that service.
+- None of the provided code is to be touched.
 
 # Improvements
 - SpringBoot
