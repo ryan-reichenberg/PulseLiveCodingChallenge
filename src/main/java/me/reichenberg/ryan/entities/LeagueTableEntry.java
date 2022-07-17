@@ -198,19 +198,19 @@ public class LeagueTableEntry {
         }
 
         public LeagueTableEntryBuilder incrementWin() {
-            this.won += 1;
+            this.won++;
             this.points += WIN_POINTS;
             return this;
         }
 
         public LeagueTableEntryBuilder incrementDraw() {
-            this.drawn += 1;
+            this.drawn++;
             this.points += DRAW_POINTS;
             return this;
         }
 
         public LeagueTableEntryBuilder incrementLoss() {
-            this.lost += 1;
+            this.lost++;
             this.points += LOSE_POINTS;
             return this;
         }
@@ -227,6 +227,11 @@ public class LeagueTableEntry {
 
         public LeagueTableEntryBuilder withPoints(int points) {
             this.points = points;
+            return this;
+        }
+
+        public LeagueTableEntryBuilder incrementPlayed(int played) {
+            this.played = ++played;
             return this;
         }
 

@@ -1,9 +1,13 @@
+package me.reichenberg.ryan.tests;
+
 import me.reichenberg.ryan.components.CsvParser;
 import me.reichenberg.ryan.entities.LeagueTable;
 import me.reichenberg.ryan.entities.LeagueTableEntry;
 import me.reichenberg.ryan.entities.Match;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,9 +28,29 @@ public class LeagueTableEntryTests {
 
 
     @Test
-    public void shouldReturnLeagueTableInCorrectOrder() throws Exception {
-        List<String[]> standings = parser.parse(this.getClass().getResource("data/standings.csv").getPath());
-        List<Match> matches = parser.parse(this.getClass().getResource("data/match_data.csv").getPath(), Match.class);
+    public void shouldSuccessfullyValidateInvinciblesSeason() throws Exception {
+        validateStandings("/data/epl");
+    }
+
+    @Test
+    public void shouldSuccessfullyValidateLaLigaSeason() throws Exception {
+       validateStandings("/data/laliga");
+    }
+
+    @Test
+    /**
+     * getResource will return null, causing an NPE instead of FileNotFoundException.
+     * This is okay because the intended use is to pass in a file path (string) like below
+     */
+    public void shouldFailOnFileNotFound() {
+        Assertions.assertThrows(FileNotFoundException.class, () -> {
+            parser.parse("./path/does/not/exist/match_data.csv", Match.class);
+        });
+    }
+
+    private void validateStandings(String path) throws Exception {
+        List<String[]> standings = parser.parse(this.getClass().getResource(path + "/standings.csv").getPath());
+        List<Match> matches = parser.parse(this.getClass().getResource(path + "/match_data.csv").getPath(), Match.class);
         List<String> headers = Arrays.asList(standings.get(0));
         List<LeagueTableEntry> tableEntries = new LeagueTable(matches).getTableEntries();
         for(int i = 1; i < standings.size(); i++) {

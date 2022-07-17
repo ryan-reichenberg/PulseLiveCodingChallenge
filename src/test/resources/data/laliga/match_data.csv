@@ -1,0 +1,381 @@
+homeTeam,awayTeam,homeScore,awayScore
+Málaga CF,Athletic Club Bilbao,1,0
+Granada CF,RCD La Coruña,2,1
+Sevilla FC,Valencia CF,1,1
+UD Almería,RCD Espanyol,1,1
+SD Eibar,Real Sociedad,1,0
+RC Celta Vigo,Getafe CF,3,1
+FC Barcelona,Elche CF,3,0
+Levante UD,Villarreal CF,0,2
+Real Madrid,Córdoba CF,2,0
+Rayo Vallecano,Atlético Madrid,0,0
+Getafe CF,UD Almería,1,0
+Valencia CF,Málaga CF,3,0
+Córdoba CF,RC Celta Vigo,1,1
+Athletic Club Bilbao,Levante UD,3,0
+Atlético Madrid,SD Eibar,2,1
+RCD Espanyol,Sevilla FC,1,2
+Villarreal CF,FC Barcelona,0,1
+RCD La Coruña,Rayo Vallecano,2,2
+Real Sociedad,Real Madrid,4,2
+Elche CF,Granada CF,1,1
+UD Almería,Córdoba CF,1,1
+FC Barcelona,Athletic Club Bilbao,2,0
+Málaga CF,Levante UD,0,0
+Real Madrid,Atlético Madrid,1,2
+RC Celta Vigo,Real Sociedad,2,2
+Rayo Vallecano,Elche CF,2,3
+Valencia CF,RCD Espanyol,3,1
+Sevilla FC,Getafe CF,2,0
+Granada CF,Villarreal CF,0,0
+SD Eibar,RCD La Coruña,0,1
+Elche CF,SD Eibar,0,2
+RCD La Coruña,Real Madrid,2,8
+Athletic Club Bilbao,Granada CF,0,1
+Atlético Madrid,RC Celta Vigo,2,2
+RCD Espanyol,Málaga CF,2,2
+Real Sociedad,UD Almería,1,2
+Villarreal CF,Rayo Vallecano,4,2
+Córdoba CF,Sevilla FC,1,3
+Levante UD,FC Barcelona,0,5
+Getafe CF,Valencia CF,0,3
+Real Madrid,Elche CF,5,1
+RC Celta Vigo,RCD La Coruña,2,1
+Rayo Vallecano,Athletic Club Bilbao,2,1
+SD Eibar,Villarreal CF,1,1
+UD Almería,Atlético Madrid,0,1
+Málaga CF,FC Barcelona,0,0
+Granada CF,Levante UD,0,1
+Sevilla FC,Real Sociedad,1,0
+RCD Espanyol,Getafe CF,2,0
+Valencia CF,Córdoba CF,3,0
+Elche CF,RC Celta Vigo,0,1
+Villarreal CF,Real Madrid,0,2
+FC Barcelona,Granada CF,6,0
+Atlético Madrid,Sevilla FC,4,0
+Levante UD,Rayo Vallecano,0,2
+Athletic Club Bilbao,SD Eibar,0,0
+Getafe CF,Málaga CF,1,0
+RCD La Coruña,UD Almería,0,1
+Real Sociedad,Valencia CF,1,1
+Córdoba CF,RCD Espanyol,0,0
+Getafe CF,Córdoba CF,1,1
+Valencia CF,Atlético Madrid,3,1
+Rayo Vallecano,FC Barcelona,0,2
+SD Eibar,Levante UD,3,3
+UD Almería,Elche CF,2,2
+Málaga CF,Granada CF,2,1
+Sevilla FC,RCD La Coruña,4,1
+RC Celta Vigo,Villarreal CF,1,3
+RCD Espanyol,Real Sociedad,2,0
+Real Madrid,Athletic Club Bilbao,5,0
+Granada CF,Rayo Vallecano,0,1
+Levante UD,Real Madrid,0,5
+Athletic Club Bilbao,RC Celta Vigo,1,1
+FC Barcelona,SD Eibar,3,0
+Córdoba CF,Málaga CF,1,2
+Atlético Madrid,RCD Espanyol,2,0
+RCD La Coruña,Valencia CF,3,0
+Elche CF,Sevilla FC,0,2
+Villarreal CF,UD Almería,2,0
+Real Sociedad,Getafe CF,1,2
+RC Celta Vigo,Levante UD,3,0
+UD Almería,Athletic Club Bilbao,0,1
+Real Madrid,FC Barcelona,3,1
+Valencia CF,Elche CF,3,1
+SD Eibar,Granada CF,1,1
+Córdoba CF,Real Sociedad,1,1
+Málaga CF,Rayo Vallecano,4,0
+RCD Espanyol,RCD La Coruña,0,0
+Sevilla FC,Villarreal CF,2,1
+Getafe CF,Atlético Madrid,0,1
+RCD La Coruña,Getafe CF,1,2
+Granada CF,Real Madrid,0,4
+Atlético Madrid,Córdoba CF,4,2
+FC Barcelona,RC Celta Vigo,0,1
+Real Sociedad,Málaga CF,0,1
+Athletic Club Bilbao,Sevilla FC,1,0
+Villarreal CF,Valencia CF,1,3
+Levante UD,UD Almería,2,1
+Elche CF,RCD Espanyol,2,1
+Rayo Vallecano,SD Eibar,2,3
+Córdoba CF,RCD La Coruña,0,0
+UD Almería,FC Barcelona,1,2
+Getafe CF,Elche CF,0,0
+Real Madrid,Rayo Vallecano,5,1
+Málaga CF,SD Eibar,2,1
+RC Celta Vigo,Granada CF,0,0
+Sevilla FC,Levante UD,1,1
+RCD Espanyol,Villarreal CF,1,1
+Valencia CF,Athletic Club Bilbao,0,0
+Real Sociedad,Atlético Madrid,2,1
+Athletic Club Bilbao,RCD Espanyol,3,1
+Atlético Madrid,Málaga CF,3,1
+SD Eibar,Real Madrid,0,4
+FC Barcelona,Sevilla FC,5,1
+RCD La Coruña,Real Sociedad,0,0
+Rayo Vallecano,RC Celta Vigo,1,0
+Levante UD,Valencia CF,2,1
+Elche CF,Córdoba CF,2,2
+Villarreal CF,Getafe CF,2,1
+Granada CF,UD Almería,0,0
+Real Sociedad,Elche CF,3,0
+Getafe CF,Athletic Club Bilbao,1,2
+RCD Espanyol,Levante UD,2,1
+Málaga CF,Real Madrid,1,2
+RC Celta Vigo,SD Eibar,0,1
+Atlético Madrid,RCD La Coruña,2,0
+Sevilla FC,Granada CF,5,1
+Córdoba CF,Villarreal CF,0,2
+Valencia CF,FC Barcelona,0,1
+UD Almería,Rayo Vallecano,0,1
+Elche CF,Atlético Madrid,0,2
+Athletic Club Bilbao,Córdoba CF,0,1
+Real Madrid,RC Celta Vigo,3,0
+RCD La Coruña,Málaga CF,0,1
+Rayo Vallecano,Sevilla FC,0,1
+FC Barcelona,RCD Espanyol,5,1
+Villarreal CF,Real Sociedad,4,0
+Granada CF,Valencia CF,1,1
+SD Eibar,UD Almería,5,2
+Levante UD,Getafe CF,1,1
+UD Almería,Real Madrid,1,4
+Getafe CF,FC Barcelona,0,0
+Valencia CF,Rayo Vallecano,3,0
+Córdoba CF,Levante UD,0,0
+Málaga CF,RC Celta Vigo,1,0
+RCD Espanyol,Granada CF,2,1
+Sevilla FC,SD Eibar,0,0
+Atlético Madrid,Villarreal CF,0,1
+Real Sociedad,Athletic Club Bilbao,1,1
+RCD La Coruña,Elche CF,1,0
+RC Celta Vigo,UD Almería,0,1
+FC Barcelona,Córdoba CF,5,0
+Levante UD,Real Sociedad,1,1
+SD Eibar,Valencia CF,0,1
+Rayo Vallecano,RCD Espanyol,1,3
+Villarreal CF,RCD La Coruña,3,0
+Granada CF,Getafe CF,1,1
+Elche CF,Málaga CF,1,2
+Athletic Club Bilbao,Atlético Madrid,1,4
+Atlético Madrid,Levante UD,3,1
+Sevilla FC,RC Celta Vigo,1,0
+Elche CF,Villarreal CF,2,2
+RCD La Coruña,Athletic Club Bilbao,1,0
+Málaga CF,UD Almería,1,2
+Getafe CF,Rayo Vallecano,1,2
+Valencia CF,Real Madrid,2,1
+RCD Espanyol,SD Eibar,1,2
+Real Sociedad,FC Barcelona,1,0
+Córdoba CF,Granada CF,2,0
+Levante UD,RCD La Coruña,0,0
+Real Madrid,RCD Espanyol,3,0
+Málaga CF,Villarreal CF,1,1
+RC Celta Vigo,Valencia CF,1,1
+SD Eibar,Getafe CF,2,1
+UD Almería,Sevilla FC,0,2
+Athletic Club Bilbao,Elche CF,1,2
+Granada CF,Real Sociedad,1,1
+FC Barcelona,Atlético Madrid,3,1
+Rayo Vallecano,Córdoba CF,0,1
+Córdoba CF,SD Eibar,1,1
+Real Sociedad,Rayo Vallecano,0,1
+Valencia CF,UD Almería,3,2
+Villarreal CF,Athletic Club Bilbao,2,0
+RCD Espanyol,RC Celta Vigo,1,0
+Getafe CF,Real Madrid,0,3
+Atlético Madrid,Granada CF,2,0
+RCD La Coruña,FC Barcelona,0,4
+Sevilla FC,Málaga CF,2,0
+Elche CF,Levante UD,1,0
+Córdoba CF,Real Madrid,1,2
+Elche CF,FC Barcelona,0,6
+Atlético Madrid,Rayo Vallecano,3,1
+Real Sociedad,SD Eibar,1,0
+Villarreal CF,Levante UD,1,0
+RCD La Coruña,Granada CF,2,2
+Athletic Club Bilbao,Málaga CF,1,1
+RCD Espanyol,UD Almería,3,0
+Valencia CF,Sevilla FC,3,1
+Getafe CF,RC Celta Vigo,2,1
+Rayo Vallecano,RCD La Coruña,1,2
+Real Madrid,Real Sociedad,4,1
+SD Eibar,Atlético Madrid,1,3
+Granada CF,Elche CF,1,0
+RC Celta Vigo,Córdoba CF,1,0
+Levante UD,Athletic Club Bilbao,0,2
+UD Almería,Getafe CF,1,0
+Sevilla FC,RCD Espanyol,3,2
+FC Barcelona,Villarreal CF,3,2
+Málaga CF,Valencia CF,1,0
+Real Madrid,Sevilla FC,2,1
+RCD La Coruña,SD Eibar,2,0
+Atlético Madrid,Real Madrid,4,0
+Villarreal CF,Granada CF,2,0
+Levante UD,Málaga CF,4,1
+Real Sociedad,RC Celta Vigo,1,1
+Córdoba CF,UD Almería,1,2
+Getafe CF,Sevilla FC,2,1
+RCD Espanyol,Valencia CF,1,2
+Athletic Club Bilbao,FC Barcelona,2,5
+Elche CF,Rayo Vallecano,2,0
+UD Almería,Real Sociedad,2,2
+Sevilla FC,Córdoba CF,3,0
+Real Madrid,RCD La Coruña,2,0
+Granada CF,Athletic Club Bilbao,0,0
+Málaga CF,RCD Espanyol,0,2
+Valencia CF,Getafe CF,1,0
+FC Barcelona,Levante UD,5,0
+Rayo Vallecano,Villarreal CF,2,0
+RC Celta Vigo,Atlético Madrid,2,0
+SD Eibar,Elche CF,0,1
+Getafe CF,RCD Espanyol,2,1
+FC Barcelona,Málaga CF,0,1
+Córdoba CF,Valencia CF,1,2
+Atlético Madrid,UD Almería,3,0
+RCD La Coruña,RC Celta Vigo,0,2
+Real Sociedad,Sevilla FC,4,3
+Athletic Club Bilbao,Rayo Vallecano,1,0
+Villarreal CF,SD Eibar,1,0
+Elche CF,Real Madrid,0,2
+Levante UD,Granada CF,2,1
+RCD Espanyol,Córdoba CF,1,0
+Granada CF,FC Barcelona,1,3
+Rayo Vallecano,Levante UD,4,2
+UD Almería,RCD La Coruña,0,0
+Málaga CF,Getafe CF,3,2
+Valencia CF,Real Sociedad,2,0
+SD Eibar,Athletic Club Bilbao,0,1
+Sevilla FC,Atlético Madrid,0,0
+Real Madrid,Villarreal CF,1,1
+RC Celta Vigo,Elche CF,1,1
+Levante UD,SD Eibar,2,1
+RCD La Coruña,Sevilla FC,3,4
+Athletic Club Bilbao,Real Madrid,1,0
+Elche CF,UD Almería,1,0
+Granada CF,Málaga CF,1,0
+FC Barcelona,Rayo Vallecano,6,1
+Real Sociedad,RCD Espanyol,1,0
+Villarreal CF,RC Celta Vigo,4,1
+Atlético Madrid,Valencia CF,1,1
+Córdoba CF,Getafe CF,1,2
+Valencia CF,RCD La Coruña,2,0
+RCD Espanyol,Atlético Madrid,0,0
+SD Eibar,FC Barcelona,0,2
+Rayo Vallecano,Granada CF,3,1
+RC Celta Vigo,Athletic Club Bilbao,1,2
+UD Almería,Villarreal CF,0,0
+Málaga CF,Córdoba CF,2,0
+Sevilla FC,Elche CF,3,0
+Real Madrid,Levante UD,2,0
+Getafe CF,Real Sociedad,0,1
+Elche CF,Valencia CF,0,4
+Atlético Madrid,Getafe CF,2,0
+Rayo Vallecano,Málaga CF,1,0
+Levante UD,RC Celta Vigo,0,1
+Athletic Club Bilbao,UD Almería,2,1
+Granada CF,SD Eibar,0,0
+RCD La Coruña,RCD Espanyol,0,0
+Villarreal CF,Sevilla FC,0,2
+Real Sociedad,Córdoba CF,3,1
+FC Barcelona,Real Madrid,2,1
+SD Eibar,Rayo Vallecano,1,2
+Sevilla FC,Athletic Club Bilbao,2,0
+Córdoba CF,Atlético Madrid,0,2
+UD Almería,Levante UD,1,4
+Málaga CF,Real Sociedad,1,1
+Real Madrid,Granada CF,9,1
+Valencia CF,Villarreal CF,0,0
+Getafe CF,RCD La Coruña,2,1
+RC Celta Vigo,FC Barcelona,0,1
+RCD Espanyol,Elche CF,1,1
+Atlético Madrid,Real Sociedad,2,0
+Levante UD,Sevilla FC,1,2
+SD Eibar,Málaga CF,1,0
+RCD La Coruña,Córdoba CF,1,1
+FC Barcelona,UD Almería,4,0
+Rayo Vallecano,Real Madrid,0,2
+Granada CF,RC Celta Vigo,1,1
+Athletic Club Bilbao,Valencia CF,1,1
+Elche CF,Getafe CF,0,1
+Villarreal CF,RCD Espanyol,0,3
+Real Madrid,SD Eibar,3,0
+Málaga CF,Atlético Madrid,2,2
+Sevilla FC,FC Barcelona,2,2
+RC Celta Vigo,Rayo Vallecano,6,1
+UD Almería,Granada CF,3,0
+Getafe CF,Villarreal CF,1,1
+RCD Espanyol,Athletic Club Bilbao,1,0
+Real Sociedad,RCD La Coruña,2,2
+Córdoba CF,Elche CF,0,2
+Valencia CF,Levante UD,3,0
+Levante UD,RCD Espanyol,2,2
+FC Barcelona,Valencia CF,2,0
+RCD La Coruña,Atlético Madrid,1,2
+Real Madrid,Málaga CF,3,1
+Athletic Club Bilbao,Getafe CF,4,0
+Rayo Vallecano,UD Almería,2,0
+Granada CF,Sevilla FC,1,1
+Villarreal CF,Córdoba CF,0,0
+SD Eibar,RC Celta Vigo,0,1
+Elche CF,Real Sociedad,1,0
+Córdoba CF,Athletic Club Bilbao,0,1
+RCD Espanyol,FC Barcelona,0,2
+Atlético Madrid,Elche CF,3,0
+Getafe CF,Levante UD,0,1
+Real Sociedad,Villarreal CF,0,0
+Málaga CF,RCD La Coruña,1,1
+UD Almería,SD Eibar,2,0
+Sevilla FC,Rayo Vallecano,2,0
+RC Celta Vigo,Real Madrid,2,4
+Valencia CF,Granada CF,4,0
+FC Barcelona,Getafe CF,6,0
+Levante UD,Córdoba CF,1,0
+Athletic Club Bilbao,Real Sociedad,1,1
+SD Eibar,Sevilla FC,1,3
+Real Madrid,UD Almería,3,0
+RC Celta Vigo,Málaga CF,1,0
+Elche CF,RCD La Coruña,4,0
+Villarreal CF,Atlético Madrid,0,1
+Rayo Vallecano,Valencia CF,1,1
+Granada CF,RCD Espanyol,1,2
+Real Sociedad,Levante UD,3,0
+Córdoba CF,FC Barcelona,0,8
+Atlético Madrid,Athletic Club Bilbao,0,0
+Sevilla FC,Real Madrid,2,3
+RCD La Coruña,Villarreal CF,1,1
+RCD Espanyol,Rayo Vallecano,1,1
+Getafe CF,Granada CF,1,2
+Valencia CF,SD Eibar,3,1
+Málaga CF,Elche CF,1,2
+UD Almería,RC Celta Vigo,2,2
+SD Eibar,RCD Espanyol,0,2
+Granada CF,Córdoba CF,2,0
+FC Barcelona,Real Sociedad,2,0
+Real Madrid,Valencia CF,2,2
+Athletic Club Bilbao,RCD La Coruña,1,1
+Levante UD,Atlético Madrid,2,2
+Villarreal CF,Elche CF,1,0
+UD Almería,Málaga CF,1,2
+RC Celta Vigo,Sevilla FC,1,1
+Rayo Vallecano,Getafe CF,2,0
+Getafe CF,SD Eibar,1,1
+Atlético Madrid,FC Barcelona,0,1
+Valencia CF,RC Celta Vigo,1,1
+Córdoba CF,Rayo Vallecano,1,2
+Real Sociedad,Granada CF,0,3
+RCD Espanyol,Real Madrid,1,4
+Sevilla FC,UD Almería,2,1
+RCD La Coruña,Levante UD,2,0
+Villarreal CF,Málaga CF,2,1
+Elche CF,Athletic Club Bilbao,2,3
+Levante UD,Elche CF,0,0
+Athletic Club Bilbao,Villarreal CF,4,0
+Málaga CF,Sevilla FC,2,3
+FC Barcelona,RCD La Coruña,2,2
+SD Eibar,Córdoba CF,3,0
+RC Celta Vigo,RCD Espanyol,3,2
+UD Almería,Valencia CF,2,3
+Granada CF,Atlético Madrid,0,0
+Rayo Vallecano,Real Sociedad,2,4
+Real Madrid,Getafe CF,7,3

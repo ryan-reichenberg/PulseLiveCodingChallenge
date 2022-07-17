@@ -1,5 +1,6 @@
 plugins {
     id 'application'
+    id 'com.adarshr.test-logger' version '3.2.0'
 }
 
 group 'org.example'
@@ -7,6 +8,12 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+}
+
+testlogger {
+    theme 'mocha'
+    // Set threshold to 0 so we can see duration of test
+    slowThreshold 0
 }
 
 dependencies {

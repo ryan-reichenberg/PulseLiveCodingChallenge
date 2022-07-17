@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 // Mutable entity - maintains state
 // Local cache should be fine for this object
 // Shouldn't be too expensive to create
+// Worst case we have 380 matches per league
 public class LeagueTable {
 
     private final Map<String, LeagueTableEntry> table;
@@ -30,6 +31,11 @@ public class LeagueTable {
     }
 
 
+    /**
+     * Transform match data into a League Table
+     * @param matches
+     * @return List of League Table Entries
+     */
     private List<LeagueTableEntry> convert(List<Match> matches) {
         matches.forEach(match -> {
             Pair<LeagueTableEntry, LeagueTableEntry> leagueEntries = getLeagueEntriesForMatch(match);
@@ -43,17 +49,31 @@ public class LeagueTable {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Update Map entry with latest table entry
+     * @param match
+     * @param home
+     * @param away
+     */
     private void updateLeagueTableEntries(Match match, LeagueTableEntry home, LeagueTableEntry away) {
         Pair<MatchOutcome, MatchOutcome> outcomes = determineMatchOutcomes(match, home.getTeamName());
         table.put(home.getTeamName(), createNewTableEntry(home, match.getHomeScore(), match.getAwayScore(), outcomes.getLeft()));
         table.put(away.getTeamName(), createNewTableEntry(away, match.getAwayScore(), match.getHomeScore(), outcomes.getRight()));
     }
 
+    /**
+     *  LeagueTableEntry is immutable so we need to create a new instance every time
+     * @param team
+     * @param goalsFor
+     * @param goalsAgainst
+     * @param outcome
+     * @return new LeagueTableEntry
+     */
     private LeagueTableEntry createNewTableEntry(LeagueTableEntry team, int goalsFor, int goalsAgainst, MatchOutcome outcome) {
         LeagueTableEntry.LeagueTableEntryBuilder builder = LeagueTableEntry.LeagueTableEntryBuilder.newBuilder();
 
         builder.withTeamName(team.getTeamName())
-        .withPlayed(team.getPlayed() + 1)
+        .incrementPlayed(team.getPlayed())
         .withWon(team.getWon())
         .withLost(team.getLost())
         .withDrawn(team.getDrawn())
@@ -64,6 +84,11 @@ public class LeagueTable {
         return builder.build();
     }
 
+    /**
+     * Update new LeagueTableEntry depending on the outcome of the match
+     * @param builder
+     * @param outcome
+     */
     private void calculateWinDrawLoss(LeagueTableEntry.LeagueTableEntryBuilder builder, MatchOutcome outcome) {
         switch(outcome) {
             case WIN:

@@ -106,11 +106,13 @@ def generate_standings(match_data):
 
 
 def write_standings_to_csv(standings, path):
+    print(f"Writing standing data out to {path}")
     headers = standings[0].keys()
     write_csv(path, headers, standings, "standings")
 
 
 def write_match_data_to_csv(matches, path):
+    print(f"Writing match data out to {path}")
     headers = matches[0].keys()
     write_csv(path, headers, matches, "match_data")
 

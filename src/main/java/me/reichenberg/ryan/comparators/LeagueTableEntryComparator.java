@@ -6,6 +6,13 @@ import org.apache.commons.lang3.builder.CompareToBuilder;
 import java.util.Comparator;
 
 public class LeagueTableEntryComparator implements Comparator<LeagueTableEntry> {
+
+    /**
+     * Sort by total points (descending)
+     * Then by goal difference (descending)
+     * Then by goals scored (descending)
+     * Then by team name (in alphabetical order)
+     */
     @Override
     public int compare(LeagueTableEntry o1, LeagueTableEntry o2) {
         return new CompareToBuilder()
