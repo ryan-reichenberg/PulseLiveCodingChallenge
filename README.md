@@ -37,7 +37,7 @@ league table in csv format.
 # Running
 ```
 ./gradlew run --args="<file path>"
-<file path> - This isa file path to match data. See test/resources/data/match_data.csv as an example
+<file path> - This isa file path to match data. See test/resources/data/epl/match_data.csv as an example
 ```
 ## Testing
 ```
