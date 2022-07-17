@@ -60,6 +60,7 @@ As such, it makes sense validation of the data (e.g. messages) are a responsibil
   - Spring-Kafka
   - Spring-batch?
   - Swagger
+  - Security (JWT Auth)
   - Actuator
 - Logging
 - Lombok
