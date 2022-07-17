@@ -1,6 +1,6 @@
 # Football Data Generation Utility
 
-NOTE: This utility requires Python 3.x
+**NOTE: This utility requires Python 3.x**
 
 ## Description
 This utility will generate correct standings from match data and will also process the match data and normalise it into 
