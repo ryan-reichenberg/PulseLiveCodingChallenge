@@ -14,8 +14,8 @@ public class LeagueTableService {
 
     /**
      * Process csv and transform to LeagueTable object
-     * @param filePath
-     * @return
+     * @param filePath - the path to the match data csv
+     * @return a new League Table instance
      * @throws IOException
      */
     public LeagueTable processMatchData(String filePath) throws IOException {
@@ -25,7 +25,7 @@ public class LeagueTableService {
 
     /**
      * Print formatted league table to standard output
-     * @param standings
+     * @param standings - list of league  table entries
      */
     public void printLeageTable(List<LeagueTableEntry> standings) {
         StringBuilder builder = new StringBuilder();

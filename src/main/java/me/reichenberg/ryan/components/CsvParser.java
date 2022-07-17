@@ -10,7 +10,7 @@ public class CsvParser {
 
     /**
      * Read csv line by line and store it in a list
-     * @param filePath
+     * @param filePath - The file path to the csv
      * @return List of csv rows
      * @throws Exception
      */
@@ -25,9 +25,9 @@ public class CsvParser {
 
     /**
      * Parse csv and convert it to list of objects
-     * @param filePath
-     * @param clazz
-     * @param <T>
+     * @param filePath - The file path to the csv
+     * @param clazz - The class to transform the data to
+     * @param <T> - The type of the list returned
      * @return List of objects
      * @throws IOException
      */

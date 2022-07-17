@@ -33,7 +33,7 @@ public class LeagueTable {
 
     /**
      * Transform match data into a League Table
-     * @param matches
+     * @param matches - A list of Match data
      * @return List of League Table Entries
      */
     private List<LeagueTableEntry> convert(List<Match> matches) {
@@ -51,9 +51,9 @@ public class LeagueTable {
 
     /**
      * Update Map entry with latest table entry
-     * @param match
-     * @param home
-     * @param away
+     * @param match - The match played
+     * @param home - The League Table entry of the home team
+     * @param away - The League Table entry of the away team
      */
     private void updateLeagueTableEntries(Match match, LeagueTableEntry home, LeagueTableEntry away) {
         Pair<MatchOutcome, MatchOutcome> outcomes = determineMatchOutcomes(match, home.getTeamName());
@@ -62,12 +62,12 @@ public class LeagueTable {
     }
 
     /**
-     *  LeagueTableEntry is immutable so we need to create a new instance every time
-     * @param team
-     * @param goalsFor
-     * @param goalsAgainst
-     * @param outcome
-     * @return new LeagueTableEntry
+     *  LeagueTableEntry is immutable, so we need to create a new instance every time
+     * @param team - The previous League Table Entry for team x
+     * @param goalsFor - Goals the team scored
+     * @param goalsAgainst - Goals the team conceded
+     * @param outcome - Outcome of the match
+     * @return A new LeagueTableEntry instance
      */
     private LeagueTableEntry createNewTableEntry(LeagueTableEntry team, int goalsFor, int goalsAgainst, MatchOutcome outcome) {
         LeagueTableEntry.LeagueTableEntryBuilder builder = LeagueTableEntry.LeagueTableEntryBuilder.newBuilder();
@@ -86,8 +86,8 @@ public class LeagueTable {
 
     /**
      * Update new LeagueTableEntry depending on the outcome of the match
-     * @param builder
-     * @param outcome
+     * @param builder - The League Table Entry builder
+     * @param outcome - Outcome of the match
      */
     private void calculateWinDrawLoss(LeagueTableEntry.LeagueTableEntryBuilder builder, MatchOutcome outcome) {
         switch(outcome) {
@@ -105,8 +105,8 @@ public class LeagueTable {
 
     /**
      * Determines outcomes of the match E.g. which team won and which team lost
-     * @param match
-     * @param home
+     * @param match - The match played
+     * @param home - The name of the home team
      * @return Pair of outcomes (left = outcome for home team, right = outcome for away team)
      */
     private Pair<MatchOutcome, MatchOutcome> determineMatchOutcomes(Match match, String home) {
@@ -122,8 +122,8 @@ public class LeagueTable {
 
     /**
      * Check if the passed in team is the winner
-     * @param match
-     * @param team
+     * @param match - The match played
+     * @param team  - The name of the team (E.g. home or away)
      * @return true if the team won
      */
     private boolean isTeamWinner(Match match, String team) {
@@ -132,7 +132,7 @@ public class LeagueTable {
 
     /**
      * Look up Map for Team entries otherwise create them if thet don't exist
-     * @param match
+     * @param match - The match played
      * @return Pair of team entries (left = home, right = away)
      */
     private Pair<LeagueTableEntry, LeagueTableEntry> getLeagueEntriesForMatch(Match match) {

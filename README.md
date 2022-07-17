@@ -29,10 +29,10 @@ This application is a CLI application that will print a formatted league table t
 
 ```
 
-NOTE: This application only handles csv files. Included is a utility to download match data and generate a corresponding
+NOTE: This application only handles csv files. Included is a utility to download match data, 
+transform it into  a form this application can read in  and generate a corresponding
 league table in csv format.
 
-# Design decisions
 
 # Running
 ```
@@ -57,5 +57,13 @@ As such, it makes sense validation of the data (e.g. messages) are a responsibil
 
 # Improvements
 - SpringBoot
+  - Spring-Kafka
+  - Spring-batch?
+  - Swagger
+  - Actuator
+- Logging
 - Lombok
-- Database/Redis 
+- Database
+  - JPA
+  - Hibernate
+- Docker
