@@ -10,6 +10,9 @@ repositories {
     mavenCentral()
 }
 
+sourceCompatibility = '1.11'
+targetCompatibility = '1.11'
+
 testlogger {
     theme 'mocha'
     // Set threshold to 0 so we can see duration of test

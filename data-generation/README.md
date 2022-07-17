@@ -1,5 +1,7 @@
 # Football Data Generation Utility
 
+NOTE: This utility requires Python 3.x
+
 ## Description
 This utility will generate correct standings from match data and will also process the match data and normalise it into 
 a form the Java code can process.
@@ -44,9 +46,15 @@ Charlton Athletic FC,Chelsea FC,2,3
 ```
 
 ## Running
-Setup the virtual python environment
+NOTE: First two steps are optional
+
+Create the virtual python environment
 ```
-source ./venv/bin/active
+python3 -m env  ./.venv
+```
+Set up the virtual python environment
+```
+source ./.venv/bin/active
 ```
 Install dependencies
 ```

@@ -1,5 +1,7 @@
 # PulseLive Coding Challenge
 
+NOTE: This application requires Java 11+ to run.
+
 # Description
 This application is a CLI application that will print a formatted league table to standard output. For example:
 ```

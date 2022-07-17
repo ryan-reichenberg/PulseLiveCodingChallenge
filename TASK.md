@@ -3,7 +3,7 @@
 The purpose of this exercise is to demonstrate your ability to use 
 Java to build a dynamic football league table generator.
 
-#Task
+# Task
 
 Consider a league table for football. Each team plays a number of matches and the results
 of each match build the table. Given the code attached as a starting point build
